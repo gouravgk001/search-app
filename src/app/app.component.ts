@@ -10,12 +10,13 @@ export class AppComponent {
   title = 'image-search-engine';
   images: any = [];
   searchImage: any;
+  searching: boolean = false;
 
   constructor(private http: HttpClient) {
-    //this.getData();
   }
 
   getImage() {
+    this.searching = true;
     this.http
       .get(
         'https://pixabay.com/api/?key=28786749-a092bf32100ed8677a69247d4&q=' +
@@ -24,11 +25,9 @@ export class AppComponent {
       )
       .subscribe((response) => {
         this.images = response;
-        console.log(this.images);
+        this.searching = false;
       });
   }
 
-  // getImage() {
-  //   console.log(this.searchImage);
-  // }
+ 
 }
