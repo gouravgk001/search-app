@@ -1,57 +1,17 @@
-<!-- <div class="input-group">
-  <div class="form-outline">
-    <input
-      type="search"
-      id="form1"
-      class="form-control"
-      [(ngModel)]="searchImage"
-    />
-    <label class="form-label" for="form1">Search</label>
-  </div>
-  <button type="button" class="btn btn-primary">
+<div class="searchBar">
+  <input
+    type="search"
+    [(ngModel)]="searchImage"
+    placeholder="search image here..."
+  />
+  <button type="button" (click)="getImage()">
     <i class="fa fa-search"></i>
   </button>
-</div> -->
-
-<input
-  type="search"
-  [(ngModel)]="searchImage"
-  placeholder="search image here..."
-/>
-<button type="button" (click)="getImage()"><i class="fa fa-search"></i></button>
-
-<div *ngFor="let image of images.hits">
-  <!-- <p>
-    {{ image.tags }}
-  </p> -->
-  <img src="{{ image.webformatURL }}" />
 </div>
+<div *ngIf="searching">Fetching data...</div>
 
-<!-- <div class="form-control">
-  <input type="search" id="form1" class="form-control" />
-  <label class="form-label" for="form1">Search</label>
-  <button type="button" class="btn btn-primary">
-    <i class="fa fa-search"></i>
-  </button>
-</div> -->
-
-<!-- <form>
-  <div class="form-outline mb-4">
-    <input
-      type="email"
-      id="emailField"
-      class="form-control form-control-lg"
-      name="emailField"
-    />
-    <label class="form-label" for="emailField">Email</label>
+<div class="image-grid">
+  <div *ngFor="let image of images.hits">
+    <img src="{{ image.webformatURL }}" alt="{{ searchImage }}" />
   </div>
-
-  <div class="form-outline mb-4">
-    <input
-      type="password"
-      id="passField"
-      class="form-control form-control-lg"
-      name="passField"
-    />
-  </div>
-</form> -->
+</div>
