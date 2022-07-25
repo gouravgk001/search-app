@@ -1,0 +1,22 @@
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: space-between;
+  input {
+    width: 89%;
+    padding: 10px;
+    font-size: 20px;
+  }
+  button {
+    width: 10%;
+    padding: 10px;
+    font-size: 18px;
+  }
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
